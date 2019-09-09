@@ -22,8 +22,12 @@ new Vue ({
           lineIndex: line_index,
           leftNum: 100,
           numberIndex: 0,
-          insert: function () {
-            
+          insert: function (){
+            this.answer.push(parseInt(message));
+            this.message = '';
+            this.numberIndex += 1;
+            this.leftNum -= 1;
+            alert("done");
           }
         });
       }
