@@ -1,8 +1,83 @@
 #nav {
-  background-color: red;
+  border: 10px solid black;
 }
+#UI {
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+}
+#btn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#start {
+  position: relative;
+  align-items: flex-end;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  background-color: #4CAF50; //green
+  border-radius: 8px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+#start:hover {
+  background-color: white;
+  color: black;
+}
+
+#end {
+  position: relative;
+  align-items: flex-end;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  background-color: #f44336; //red
+  border-radius: 8px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+#end:hover {
+  background-color: white;
+  color: black;
+}
+
+#init {
+  position: relative;
+  align-items: flex-end;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  background-color: gray;
+  border-radius: 8px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+#init:hover {
+  background-color: white;
+  color: black;
+}
+
+.answer .numbers {
+  display: inline;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  color: gray;
+}
+
 .array .numbers {
-  display:inline;
+  display: inline;
+  padding: 2rem;
 }
 
 .already {

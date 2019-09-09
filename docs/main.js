@@ -1,11 +1,18 @@
 new Vue ({
   el: '#app',
   data: {
-    lines: []
+    isInit: false,
+    purpose: 0,
+    lines: [],
+    timer: {
+      sec: 60
+    }
   },
   methods: {
     initial: function(){
-      this.lines = [];
+      var main = this;
+      main.lines = [];
+      main.isInit = true;
       for(var j=0;j<15;j++){
         var arr = [];
         var line_index = j;
@@ -18,16 +25,49 @@ new Vue ({
         this.lines.push({
           array: arr,
           answer: [],
+          hint: [],
           message: '',
           lineIndex: line_index,
-          leftNum: 100,
+          leftNum: 99,
           numberIndex: 0,
+          next: function(){
+            var i = main.purpose;
+            main.purpose = i + 1;
+            var parseIndex = this.numberIndex + 1;
+            var parseLeft = this.leftNum - 1;
+            this.numberIndex = parseIndex;
+            this.leftNum = parseLeft;
+            setTimeout(function(){
+              document.getElementById("input").focus();
+            },10);
+            return;
+          },
           insert: function (){
-            this.answer.push(parseInt(message));
+            if(this.leftNum <= 1){
+              this.next();
+              return;
+            }
+            setTimeout(function(){
+              var parseMs = parseInt(this.message);
+              var parseIndex = this.numberIndex + 1;
+              var parseLeft = this.leftNum - 1;
+              this.answer.push(parseMs);
+              this.message = '';
+              this.numberIndex = parseIndex;
+              this.leftNum = parseLeft;
+            }.bind(this),10);
+          },
+          undo: function(){
+            var parseIndex = this.numberIndex - 1;
+            if(parseIndex==-1) {
+              this.message = '';
+              return;
+            }
+            var parseLeft = this.leftNum + 1;
+            this.numberIndex = parseIndex;
+            this.leftNum = parseLeft;
             this.message = '';
-            this.numberIndex += 1;
-            this.leftNum -= 1;
-            alert("done");
+            this.answer.pop();
           }
         });
       }

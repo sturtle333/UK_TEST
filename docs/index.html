@@ -10,7 +10,18 @@
 <body>
   <div id="app">
     <div id="nav">
-      <button @click="initial">초기화</button>
+      <h1>UK TEST</h1>
+      <div id="UI">
+        <div id="timer">
+          <span>타이머</span><br>
+          <span>남은 시간 : </span>{{ timer.sec }}
+        </div>
+      </div>
+      <div id="btn">
+        <button id="init" @click="initial">초기화</button>
+        <button id="end" @click="end" v-if="isInit">종료</button>
+        <button id="start" @click="start" v-if="isInit">시작</button>
+      </div>
     </div>
     <br>
     <div class="node" v-for="line in lines">
@@ -29,9 +40,17 @@
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+5] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+6] }}  </p>
       </div>
-      <p class="leftNum">leftNumber : {{ line.leftNum }}</p>
-      <p>{{ line.message }}</p>
-      <input v-model="line.message" @keypress="line.insert()" autocomplete="off" type="number" pattern="\d*"></input>
+      <div class="answer">
+        <p class="numbers" v-if="line.numberIndex > 3">{{ line.answer[line.numberIndex-4] }}  </p>
+        <p class="numbers" v-if="line.numberIndex > 2">{{ line.answer[line.numberIndex-3] }}  </p>
+        <p class="numbers" v-if="line.numberIndex > 1">{{ line.answer[line.numberIndex-2] }}  </p>
+        <p class="numbers" v-if="line.numberIndex > 0">{{ line.answer[line.numberIndex-1]  }}  </p>
+      </div>
+      <p class="leftNum">남은 문제 수 : {{ line.leftNum }}</p>
+      <div v-if="purpose == line.lineIndex">
+        <input id="input" v-model.trim="line.message" @keypress="line.insert()" autocomplete="off" type="number" pattern="\d*" autofocus=""></input>
+        <button id="undo" @click="line.undo()">되돌리기</button>
+      </div>
       <hr align="center">
     </div>
   </div>
