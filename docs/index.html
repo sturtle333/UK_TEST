@@ -9,13 +9,33 @@
 </head>
 <body>
   <div id="app">
-    <button @click="initial">init</button>
+    <div id="nav">
+      <button @click="initial">초기화</button>
+    </div>
     <br>
-    <p v-for="number in arr">
-      {{ number }}
-    </p>
-    <p>{{ message }}</p>
-    <input v-model="message" autocomplete="off" type="number" pattern="\d*"></input>
+    <div class="node" v-for="line in lines">
+      <div class="array">
+        <p class="numbers">{{ line.array[line.numberIndex] }} </p>
+        <p class="numbers">{{ line.array[line.numberIndex+1] }} </p>
+        <p class="numbers">{{ line.array[line.numberIndex+2] }} </p>
+        <p class="numbers">{{ line.array[line.numberIndex+3] }} </p>
+        <p class="numbers">{{ line.array[line.numberIndex+4] }} </p>
+        <p class="numbers">{{ line.array[line.numberIndex+5] }} </p>
+        <p class="numbers">{{ line.array[line.numberIndex+6] }} </p>
+      </div>
+      <div class="answer">
+        <p class="numbers">{{ line.answer[line.numberIndex] }} </p>
+        <p class="numbers">{{ line.answer[line.numberIndex+1] }} </p>
+        <p class="numbers">{{ line.answer[line.numberIndex+2] }} </p>
+        <p class="numbers">{{ line.answer[line.numberIndex+3] }} </p>
+        <p class="numbers">{{ line.answer[line.numberIndex+4] }} </p>
+        <p class="numbers">{{ line.answer[line.numberIndex+5] }} </p>
+        <p class="numbers">{{ line.answer[line.numberIndex+6] }} </p>
+      </div>
+      <p class="leftNum">leftNumber : {{ line.leftNum }}</p>
+      <p>{{ message }}</p>
+      <input v-model="message" autocomplete="off" type="number" pattern="\d*"></input>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script type="text/javascript" src="main.js"></script>

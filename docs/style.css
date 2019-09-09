@@ -1,3 +1,11 @@
-.number {
+#nav {
+  background-color: red;
+}
+
+.numbers {
   display:inline;
+}
+
+.node {
+  text-align: center;
 }
