@@ -21,7 +21,10 @@ new Vue ({
           message: '',
           lineIndex: line_index,
           leftNum: 100,
-          numberIndex: 95
+          numberIndex: 0,
+          insert: function () {
+            
+          }
         });
       }
     }

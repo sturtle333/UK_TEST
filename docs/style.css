@@ -1,11 +1,20 @@
 #nav {
   background-color: red;
 }
-
-.numbers {
+.array .numbers {
   display:inline;
 }
-
+.already {
+  color: gray;
+}
+.main{
+  color: black;
+  font-size: 4rem;
+}
+.left{
+  color: black;
+  font-size: 2rem;
+}
 .node {
   text-align: center;
 }
