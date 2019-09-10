@@ -97,6 +97,9 @@
 .node {
   text-align: center;
 }
+.scoreList {
+  font-size: 0.8rem;
+}
 .good {
   background-color: #4CAF50;
 }

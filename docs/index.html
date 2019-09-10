@@ -59,7 +59,7 @@
       <li v-for="line in lines">맞은 점수 : {{ line.score }} / 남긴 시간 : {{ line.timeSave }}</li>
     </ol>
     <hr align="center">
-    <div id="scoreList" v-for="line in lines">
+    <div class="scoreList" v-for="line in lines">
       <span v-for="ele in line.scoreList" :class="{good: ele=='O', bad: ele=='X'}">{{ ele }}</span>
       <br>
     </div>
