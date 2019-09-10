@@ -77,6 +77,7 @@ new Vue ({
             }.bind(this),10);
           },
           undo: function(){
+            document.getElementById("input").focus();
             var parseIndex = this.numberIndex - 1;
             if(parseIndex==-1) {
               this.message = '';

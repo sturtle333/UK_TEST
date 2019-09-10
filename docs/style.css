@@ -1,5 +1,6 @@
 #nav {
   border: 10px solid black;
+  position: static;
 }
 
 #btn {
@@ -70,7 +71,14 @@
   border: 2px black solid;
   border-radius: 10px;
 }
-
+#headline {
+  display:inline-block;
+}
+#credit {
+  display: inline-block;
+  position: relative;
+  right: 0;
+}
 .answer .numbers {
   display: inline;
   padding: 1.2rem;
@@ -96,6 +104,9 @@
 }
 .node {
   text-align: center;
+}
+.BoardEle {
+  margin-bottom: 0.5rem;
 }
 .scoreList {
   font-size: 0.8rem;

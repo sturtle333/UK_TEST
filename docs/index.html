@@ -10,7 +10,8 @@
 <body>
   <div id="app">
     <div id="nav">
-      <h1>UK TEST</h1>
+      <h1 id="headline">UK TEST</h1>
+      <p id="credit">made by : sturtle333</p>
       <div id="btn">
         <button id="init" @click="initial">초기화</button>
       </div>
@@ -56,7 +57,7 @@
   </div>
   <div id="scoreBoard" v-if="done == true">
     <ol>
-      <li v-for="line in lines">맞은 점수 : {{ line.score }} / 남긴 시간 : {{ line.timeSave }}</li>
+      <li class="BoardEle" v-for="line in lines">맞은 점수 : {{ line.score }}   /   남긴 시간 : {{ line.timeSave }}</li>
     </ol>
     <hr align="center">
     <div class="scoreList" v-for="line in lines">
