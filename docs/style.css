@@ -97,3 +97,9 @@
 .node {
   text-align: center;
 }
+.good {
+  background-color: #4CAF50;
+}
+.bad {
+  background-color: #f44336;
+}

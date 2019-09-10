@@ -10,17 +10,20 @@ new Vue ({
   methods: {
     initial: function(){
       var main = this;
+      main.isInit = false;
       main.lines = [];
       main.purpose = 0;
       for(var j=0;j<15;j++){
         var arr = [];
         var hn = [];
+        var slist = [];
         var line_index = j;
         for(var i=0;i<100;i++){
           var num = Math.random();
           num = num * 10;
           num = parseInt(num);
           arr.push(num);
+          slist.push('X');
           if(i!=0){
             hn.push((arr[i-1]+num)%10);
           }
@@ -29,6 +32,7 @@ new Vue ({
           array: arr,
           answer: [],
           hint: hn,
+          scoreList: slist,
           message: '',
           lineIndex: line_index,
           leftNum: 99,
@@ -101,8 +105,14 @@ new Vue ({
             }.bind(this),1000);
           },
           end: function() {
-            if(counting != null){
+            if(main.counting != null){
               clearInterval(main.counting);
+              this.timeSave = this.timer;
+              this.scoring();
+              setTimeout(function(){
+                main.purpose = 15;
+                main.done = true;
+              },10);
             }
           },
           scoring: function(){
@@ -110,6 +120,7 @@ new Vue ({
               var scoreTemp = this.score;
               if(this.hint[i] == this.answer[i]){
                 this.score = scoreTemp + 1;
+                this.scoreList[i] = 'O';
               }
             }
           }

@@ -47,7 +47,6 @@
         <p class="numbers" v-if="line.numberIndex > 0">{{ line.answer[line.numberIndex-1]  }}  </p>
       </div>
       <p class="leftNum">남은 문제 수 : {{ line.leftNum }}</p>
-      <p class="leftNum">{{ line.hint }}</p>
       <div v-if="purpose == line.lineIndex && isInit == true">
         <input id="input" v-model.trim="line.message" @keypress="line.insert()" autocomplete="off" type="number" pattern="\d*" autofocus=""></input>
         <button id="undo" @click="line.undo()">되돌리기</button>
@@ -59,6 +58,11 @@
     <ol>
       <li v-for="line in lines">맞은 점수 : {{ line.score }} / 남긴 시간 : {{ line.timeSave }}</li>
     </ol>
+    <hr align="center">
+    <div id="scoreList" v-for="line in lines">
+      <span v-for="ele in line.scoreList" :class="{good: ele=='O', bad: ele=='X'}">{{ ele }}</span>
+      <br>
+    </div>
   </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
