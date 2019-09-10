@@ -23,7 +23,7 @@ new Vue ({
           num = num * 10;
           num = parseInt(num);
           arr.push(num);
-          slist.push('X');
+          slist.push('x');
           if(i!=0){
             hn.push((arr[i-1]+num)%10);
           }
@@ -120,7 +120,7 @@ new Vue ({
               var scoreTemp = this.score;
               if(this.hint[i] == this.answer[i]){
                 this.score = scoreTemp + 1;
-                this.scoreList[i] = 'O';
+                this.scoreList[i] = 'o';
               }
             }
           }
