@@ -11,20 +11,20 @@
   <div id="app">
     <div id="nav">
       <h1>UK TEST</h1>
-      <div id="UI">
-        <div id="timer">
-          <span>타이머</span><br>
-          <span>남은 시간 : </span>{{ timer.sec }}
-        </div>
-      </div>
       <div id="btn">
         <button id="init" @click="initial">초기화</button>
-        <button id="end" @click="end" v-if="isInit">종료</button>
-        <button id="start" @click="start" v-if="isInit">시작</button>
       </div>
     </div>
     <br>
     <div class="node" v-for="line in lines">
+      <div v-if="line.lineIndex >= purpose">
+      <div id="timer" v-if="purpose == line.lineIndex">
+          <span>타이머</span><br>
+          <span>남은 시간 : </span>{{ line.timer }}
+          <br>
+        <button id="start" @click="line.start()">시작</button>
+        <button id="end" @click="line.end()">종료</button>
+      </div>
       <div class="array">
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-6] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-5] }}  </p>
@@ -47,12 +47,19 @@
         <p class="numbers" v-if="line.numberIndex > 0">{{ line.answer[line.numberIndex-1]  }}  </p>
       </div>
       <p class="leftNum">남은 문제 수 : {{ line.leftNum }}</p>
-      <div v-if="purpose == line.lineIndex">
+      <p class="leftNum">{{ line.hint }}</p>
+      <div v-if="purpose == line.lineIndex && isInit == true">
         <input id="input" v-model.trim="line.message" @keypress="line.insert()" autocomplete="off" type="number" pattern="\d*" autofocus=""></input>
         <button id="undo" @click="line.undo()">되돌리기</button>
       </div>
       <hr align="center">
     </div>
+  </div>
+  <div id="scoreBoard" v-if="done == true">
+    <ol>
+      <li v-for="line in lines">맞은 점수 : {{ line.score }} / 남긴 시간 : {{ line.timeSave }}</li>
+    </ol>
+  </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script type="text/javascript" src="main.js"></script>
