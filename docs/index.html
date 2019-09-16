@@ -27,7 +27,6 @@
         <button id="end" @click="line.end()">종료</button>
       </div>
       <div class="array">
-        <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-5] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-4] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-3] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-2] }}  </p>
@@ -37,7 +36,6 @@
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+2] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+3] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+4] }}  </p>
-        <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+5] }}  </p>
       </div>
       <div class="answer">
         <p class="numbers" v-if="line.numberIndex > 3">{{ line.answer[line.numberIndex-4] }}  </p>
@@ -47,8 +45,8 @@
       </div>
       <p class="leftNum">남은 문제 수 : {{ line.leftNum }}</p>
       <div v-if="purpose == line.lineIndex && isInit == true">
-        <input id="input" v-model.trim="line.message" @keyup.passive="line.insert()" autocomplete="off" type="number" pattern="\d*" autofocus=""></input>
-        <button id="undo" @click.passive="line.undo()">되돌리기</button>
+        <input id="input" v-model.trim="line.message" @keyup="line.insert()" autocomplete="off" type="number" pattern="\d*" autofocus=""></input>
+        <button id="undo" @click="line.undo()">되돌리기</button>
       </div>
       <hr align="center">
     </div>
