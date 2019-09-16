@@ -8,6 +8,10 @@
   flex-direction: row-reverse;
 }
 
+#description {
+  font-size: 1.5rem;
+}
+
 #start {
   position: relative;
   align-items: flex-end;
@@ -214,6 +218,9 @@
     color: black;
     font-size: 1rem;
   }
+  .already {
+    font-size: 0.5rem;
+  }
   #timer {
     background-color: white;
     position: fixed;
@@ -248,7 +255,7 @@
 
   .array .numbers {
     display: inline;
-    padding: 0.4rem;
+    padding: 0.1rem;
   }
   .main{
     color: black;
@@ -256,7 +263,7 @@
   }
   .left{
     color: black;
-    font-size: 1rem;
+    font-size: 0.1rem;
   }
   .already {
     font-size: 0.1rem;

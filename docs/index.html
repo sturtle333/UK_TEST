@@ -17,6 +17,22 @@
       </div>
     </div>
     <br>
+    <div v-if="first" id="description">
+      <ul>
+        <li>UK TEST를 무료로 볼 수 있는 웹 어플리케이션입니다.</li>
+        <br>
+        <li>위의 초기화 버튼 클릭 후, 왼쪽의 타이머에 시작 버튼을 누르면 시작,<br>중단을 누르면 바로 채점을 합니다.</li>
+        <br>
+        <li>제작자 : 박정호 (sturtle333)</li>
+        <br>
+        <li>패치노트
+          <ol>
+            <li>2019.09.10 프로토타입 제작</li>
+            <li>2019.09.16 모바일 브라우져 지원</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
     <div class="node" v-for="line in lines">
       <div v-if="line.lineIndex >= purpose">
       <div id="timer" v-if="purpose == line.lineIndex">
@@ -32,7 +48,7 @@
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-2] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-1] }}  </p>
         <p class="numbers main">{{ line.array[line.numberIndex]  }}  </p>
-        <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+1] }}  </p>
+        <p class="numbers main">{{ line.numberIndex<=99&&line.array[line.numberIndex+1] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+2] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+3] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+4] }}  </p>

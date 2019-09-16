@@ -2,6 +2,7 @@ new Vue ({
   el: '#app',
   data: {
     isInit: false,
+    first: true,
     purpose: 0,
     lines: [],
     counting: null,
@@ -13,6 +14,7 @@ new Vue ({
       main.isInit = false;
       main.lines = [];
       main.purpose = 0;
+      main.first = false;
       for(var j=0;j<15;j++){
         var arr = [];
         var hn = [];
