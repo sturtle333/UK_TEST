@@ -27,7 +27,6 @@
         <button id="end" @click="line.end()">종료</button>
       </div>
       <div class="array">
-        <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-6] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-5] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-4] }}  </p>
         <p class="numbers already">{{ line.numberIndex>=0&&line.array[line.numberIndex-3] }}  </p>
@@ -39,7 +38,6 @@
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+3] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+4] }}  </p>
         <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+5] }}  </p>
-        <p class="numbers left">{{ line.numberIndex<=99&&line.array[line.numberIndex+6] }}  </p>
       </div>
       <div class="answer">
         <p class="numbers" v-if="line.numberIndex > 3">{{ line.answer[line.numberIndex-4] }}  </p>
