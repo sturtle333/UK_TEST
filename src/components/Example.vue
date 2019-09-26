@@ -1,13 +1,16 @@
 <template>
-  <div class="panel panel-default">
+  <div id="components">
     <head-line></head-line>
-    <div class="panel-heading">Panel Heading without title</div>
-    <div class="panel-body">Panel content</div>
+    <head-banner></head-banner>
+    <contents-content></contents-content>
   </div>
 </template>
 
 <script>
-import header from './headline.vue'
+import header from './header.vue'
+import banner from './banner.vue'
+import contents from './contents.vue'
+
 export default {
   name: 'Example',
   data(){
@@ -16,7 +19,17 @@ export default {
     }
   },
   components: {
-    'head-line': header
+    'head-line': header,
+    'head-banner': banner,
+    'contents-content': contents
   }
 }
 </script>
+
+<style>
+  #components {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+</style>

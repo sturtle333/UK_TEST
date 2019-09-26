@@ -20,7 +20,7 @@ export default {
   #header {
     text-align: center;
     color: red;
-    margin-bottom: 3rem;
+    margin: 3rem;
   }
   #header #head-line {
     display: inline-block;
