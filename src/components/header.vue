@@ -1,18 +1,31 @@
 <template>
   <div id="header">
-    <h1 id="head-line"> Hello! </h1>
-    <p class="credit">{{ msg }}</p>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">UK TEST</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">테스트하기</a></li>
+                <li><a href="#about">랜덤숫자 발생기</a></li>
+                <li><a href="#contact">제작자</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'headline',
-  data (){
-    return {
-      msg: 'i am sturtle'
-    }
-  }
+  name: 'headline'
 }
 </script>
 

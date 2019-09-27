@@ -1,15 +1,16 @@
 <template>
   <div id="components">
     <head-line></head-line>
-    <head-banner></head-banner>
-    <contents-content></contents-content>
+    <div class="container theme-showcase" role="main">
+      <contents-welcome></contents-welcome>
+    </div>
   </div>
 </template>
 
 <script>
 import header from './header.vue'
-import banner from './banner.vue'
 import contents from './contents.vue'
+import welcome from './welcome.vue'
 
 export default {
   name: 'Example',
@@ -20,8 +21,8 @@ export default {
   },
   components: {
     'head-line': header,
-    'head-banner': banner,
-    'contents-content': contents
+    'contents-content': contents,
+    'contents-welcome': welcome
   }
 }
 </script>
