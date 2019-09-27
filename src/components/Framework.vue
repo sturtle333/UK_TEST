@@ -4,6 +4,7 @@
     <div class="container theme-showcase" role="main">
       <contents-welcome></contents-welcome>
     </div>
+    <nav-footer></nav-footer>
   </div>
 </template>
 
@@ -11,18 +12,15 @@
 import header from './header.vue'
 import contents from './contents.vue'
 import welcome from './welcome.vue'
+import footer from './footer.vue'
 
 export default {
-  name: 'Example',
-  data(){
-    return {
-      msg: 'Basis!!!!'
-    }
-  },
+  name: 'Framework',
   components: {
     'head-line': header,
     'contents-content': contents,
-    'contents-welcome': welcome
+    'contents-welcome': welcome,
+    'nav-footer': footer
   }
 }
 </script>

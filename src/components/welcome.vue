@@ -1,6 +1,6 @@
 <template>
   <div id="welcome">
-    <div class="jumbotron text-center margin-space-top">
+    <div class="jumbotron text-center margin-space-top padding-space">
       <h1>Welcome!</h1>
       <p>
         해당 사이트는 UK test를 무료로 시험 볼 수 있는 사이트입니다.<br>별도의 회원가입, 유료구매 없이 UK test를 공부하세요!
@@ -14,7 +14,7 @@
       <p>
         본, 테스트를 시작하면 다음과 같은 수열 10개 씩 2세트가 주어집니다.
       </p>
-      <blockquote>
+      <blockquote class="blockquote-custom">
         <p>36426840789979740948470232458455633490222447695528</p>
         <p>22205768500774160340179681198439237852123864953998</p>
         <p>36243368711895598923375529865575506684070960867356</p>
@@ -35,7 +35,7 @@
       </p>
         만약 두 숫자를 더한 값이 10의 자리 수라면, <strong>1의 자리 수</strong>만 적어줍니다.
       </p>
-      <blockquote>
+      <blockquote class="blockquote-custom">
         <h2>Example</h2>
         <p>수열 : 3 6 4 2 6 8 4 0 7 8</p>
         <p>3 + 6 = 9</p>
@@ -92,5 +92,14 @@ export default {
 }
 .pathnote-contents {
   margin: 2rem;
+}
+.padding-space {
+  padding: 10rem;
+}
+.blockquote-custom {
+  background-color : #F2F2F2;
+  border-radius: 1rem;
+  margin-top: 8%;
+  margin-bottom: 8%;
 }
 </style>
