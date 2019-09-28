@@ -5,7 +5,7 @@
       <p>
         해당 사이트는 UK test를 무료로 시험 볼 수 있는 사이트입니다.<br>별도의 회원가입, 유료구매 없이 UK test를 공부하세요!
       </p>
-      <button type="button" class="btn btn-lg btn-link">바로가기</button>
+      <a href="/test"><button type="button" class="btn btn-lg btn-link">테스트 바로가기</button></a>
     </div>
     <div class="page-header margin-space-top">
       <h1>How to do UK test?</h1>

@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Framework from '@/components/Framework.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
-import TodoPage from '@/components/TodoPage.vue'
+import Framework from '@/components/WelcomePage/Framework.vue'
+import TestFrame from '@/components/TestPage/TestFrame.vue'
+import RandomnumberFrame from '@/components/RandomnumberPage/RandomnumberFrame.vue'
+import CreditFrame from '@/components/CreditPage/CreditFrame.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -14,9 +16,19 @@ export default new Router({
       component: Framework
     },
     {
-      path: '/todo',
-      name: 'TodoPage',
-      component: TodoPage
+      path: '/test',
+      name: 'TestFrame',
+      component: TestFrame
+    },
+    {
+      path: '/random',
+      name: 'RandomnumberFrame',
+      component: RandomnumberFrame
+    },
+    {
+      path: '/credit',
+      name: 'CreditFrame',
+      component: CreditFrame
     }
   ]
 })

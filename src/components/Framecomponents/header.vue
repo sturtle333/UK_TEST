@@ -9,13 +9,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">UK TEST</a>
+              <a class="navbar-brand" href="/">UK TEST</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/">테스트하기</a></li>
-                <li><a href="#about">랜덤숫자 발생기</a></li>
-                <li><a href="#contact">제작자</a></li>
+                <li class="active"><a href="/test">테스트하기</a></li>
+                <li><a href="/random">랜덤숫자 발생기</a></li>
+                <li><a href="/credit">제작자</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div>

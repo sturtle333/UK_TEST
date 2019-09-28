@@ -18,6 +18,7 @@
   padding: 5%;
   display: block;
   background-color: #1C1C1C;
+  flex: 1;
 }
 .footer-text {
   text-align: center;
