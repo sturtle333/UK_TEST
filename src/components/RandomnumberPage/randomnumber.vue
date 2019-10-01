@@ -11,8 +11,8 @@
     <hr>
     <div>
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation"><button class="contents-random-number-nav-btn">간단하게 생성</button></li>
-        <li role="presentation"><a href="/">고급설정 후 생성</a></li>
+        <li role="presentation"><a @click="AA">간단하게 생성</a></li>
+        <li role="presentation"><a href="random/advance">고급설정 후 생성</a></li>
       </ul>
       <p v-if="isSimple === true">심플버전</p>
       <p v-if="isSimple !== true">안심플버전</p>
@@ -28,6 +28,14 @@ export default {
     return{
       isSimple: true,
       msg: 'shit'
+    }
+  },
+  methods () {
+    return {
+      AA: ()=>{
+        alert("nope");
+        return;
+      }
     }
   }
 }
