@@ -14,7 +14,7 @@
         <li role="presentation"><a href="../random/simple">간단하게 생성</a></li>
         <li role="presentation"><a href="../random/advance">고급설정 후 생성</a></li>
       </ul>
-      <simple-gen v-if="this.$route.params.para === 'simple'"></simple-gen>
+      <simple-gen v-if="this.$route.params.para !== 'advance'"></simple-gen>
       <p v-if="this.$route.params.para === 'advance'">안심플버전</p>
     </div>
   </div>

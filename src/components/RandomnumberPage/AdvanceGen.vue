@@ -1,12 +1,12 @@
 <template>
-  <div id="Simple">
-
+  <div id="Advance">
+    <p>고급버전</p>
   </div>
 </template>
 
 <script>
   export default {
-  name: 'Simple',
+  name: 'Advance',
   methods: {
 
   }
