@@ -11,17 +11,18 @@
     <hr>
     <div>
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation"><a @click="AA">간단하게 생성</a></li>
-        <li role="presentation"><a href="random/advance">고급설정 후 생성</a></li>
+        <li role="presentation"><a href="../random/simple">간단하게 생성</a></li>
+        <li role="presentation"><a href="../random/advance">고급설정 후 생성</a></li>
       </ul>
-      <p v-if="isSimple === true">심플버전</p>
-      <p v-if="isSimple !== true">안심플버전</p>
-      <p>{{ msg }}</p>
+      <simple-gen v-if="this.$route.params.para === 'simple'"></simple-gen>
+      <p v-if="this.$route.params.para === 'advance'">안심플버전</p>
     </div>
   </div>
 </template>
 
 <script>
+import Simple from './simpleGen.vue'
+
 export default {
   name: 'randomnumber',
   data (){
@@ -30,13 +31,8 @@ export default {
       msg: 'shit'
     }
   },
-  methods () {
-    return {
-      AA: ()=>{
-        alert("nope");
-        return;
-      }
-    }
+  components: {
+    'simple-gen': Simple
   }
 }
 </script>

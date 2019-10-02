@@ -21,7 +21,7 @@
       </div>
       <div class="contents-intro-link-btn">
         <span style="font-size: 2rem;">깃허브 바로가기</span>
-        <a href="https://github.com/sturtle333">
+        <a href="https://github.com/sturtle333" target="_blank">
           <img data-src="holder.js/200x200" class="img-thumbnail" alt="200x200" style="width: 50px; height: 50px; border-radius: 50%;" src="../../assets/giticon.png" data-holder-rendered="true">
         </a>
       </div>

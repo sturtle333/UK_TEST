@@ -26,7 +26,17 @@ export default new Router({
       component: RandomnumberFrame
     },
     {
+      path: '/random/:para',
+      name: 'RandomnumberFrame',
+      component: RandomnumberFrame
+    },
+    {
       path: '/credit',
+      name: 'CreditFrame',
+      component: CreditFrame
+    },
+    {
+      path: '*',
       name: 'CreditFrame',
       component: CreditFrame
     }

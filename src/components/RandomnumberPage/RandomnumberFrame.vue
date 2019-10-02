@@ -11,6 +11,7 @@
 <script>
 import header from '../Framecomponents/header.vue'
 import randomnumber from './randomnumber.vue'
+import Simple from './simpleGen.vue'
 import footer from '../Framecomponents/footer.vue'
 
 export default {
