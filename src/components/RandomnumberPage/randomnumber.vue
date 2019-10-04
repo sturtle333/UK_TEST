@@ -15,13 +15,14 @@
         <li role="presentation"><a href="../random/advance">고급설정 후 생성</a></li>
       </ul>
       <simple-gen v-if="this.$route.params.para !== 'advance'"></simple-gen>
-      <p v-if="this.$route.params.para === 'advance'">안심플버전</p>
+      <advance-gen v-if="this.$route.params.para === 'advance'"></advance-gen>
     </div>
   </div>
 </template>
 
 <script>
 import Simple from './simpleGen.vue'
+import Advance from './AdvanceGen.vue'
 
 export default {
   name: 'randomnumber',
@@ -32,7 +33,8 @@ export default {
     }
   },
   components: {
-    'simple-gen': Simple
+    'simple-gen': Simple,
+    'advance-gen': Advance
   }
 }
 </script>

@@ -3,25 +3,22 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>#</th>
           <th>
             <div class="input-header">
               <span>원하는 수열의 길이 입력 :</span>
-              <input type="number" v-model="numbers"></input>
-              <button type="button" class="btn btn-default" @click="generate(numbers)">확인</button>
+              <input type="number" v-model="numbers" @focus="numbers = null" @blur="numbers = numbers === null? 100 : numbers;"></input>
+              <button type="button" class="btn btn-primary" @click="generate(numbers)">확인</button>
             </div>
           </th>
         </tr>
       </thead>
-      <tbody style="word-wrap: break-word;">
-        <tr style="word-wrap: break-word;">
-          <td>1</td>
-          <td class="random-line"><span v-for="element in line">{{ element }}</span></td>
+      <tbody>
+        <tr>
+          <td class="random-line"><span style="word-break: break-all">{{ line }}</span></td>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
 </template>
 
 <script>
@@ -29,23 +26,23 @@ export default {
   name: 'Simple',
   data () {
     return {
-      line: [],
-      numbers: 0
+      line: '',
+      numbers: 100
     }
   },
   methods: {
       generate: function(j){
-        if(j>1000 || j == 0) {
-        alert("숫자는 1부터 1000 사이의 숫자만 가능합니다.");
-        this.numbers = 0;
+        if(j>1000 || j <= 0) {
+        alert("길이는 1부터 1000 사이의 숫자만 가능합니다.");
+        this.numbers = null;
         return;
         }
-        this.line = [];
+        this.line = '';
         for(var i=0;i<j;i++){
           var num = Math.random();
           num = num * 10;
           num = parseInt(num);
-          this.line.push(num);
+          this.line = this.line + num;
         }
       }
   }
