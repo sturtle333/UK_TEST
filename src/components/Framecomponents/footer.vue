@@ -1,17 +1,17 @@
 <template>
-  <div id="footer">
+  <div id="nav-footer">
     <h3 class="footer-text">UK test</h3>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'footer'
+    name: 'nav-footer'
   }
 </script>
 
 <style>
-#footer {
+#nav-footer {
   display: flex;
   margin-top: 15%;
   width: 100%;

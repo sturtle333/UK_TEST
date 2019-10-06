@@ -2,7 +2,7 @@
   <div id="components">
     <head-line></head-line>
     <div class="container theme-showcase" role="main">
-      <contents-randomnumber></contents-randomnumber>
+      <p>Hi</p>
     </div>
     <nav-footer></nav-footer>
   </div>
@@ -10,19 +10,16 @@
 
 <script>
 import header from '../Framecomponents/header.vue'
-import Footer from '../Framecomponents/footer.vue'
-import randomnumber from './randomnumber.vue'
-import Simple from './simpleGen.vue'
+import footer from '../Framecomponents/footer.vue'
 
 export default {
-  name: 'RandomnumberFrame',
+  name: 'notFoundPage',
   created () {
-    document.title = "UK Test - 랜덤숫자 발생기";
+    document.title = "UK Test - 페이지를 찾을 수 없습니다.";
   },
   components: {
     'head-line': header,
-    'contents-randomnumber': randomnumber,
-    'nav-footer': Footer
+    'nav-footer': footer
   }
 }
 </script>

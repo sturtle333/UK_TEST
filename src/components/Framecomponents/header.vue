@@ -14,7 +14,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="/test">테스트하기</a></li>
-                <li><a href="/random">랜덤숫자 발생기</a></li>
+                <li><a href="/random/simple">랜덤숫자 생성기</a></li>
                 <li><a href="/credit">제작자</a></li>
               </ul>
             </div><!--/.nav-collapse -->

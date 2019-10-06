@@ -5,7 +5,7 @@
     </div>
     <div class="contents-random-number-description">
       <p>
-        랜덤 숫자 생성기는 UK 테스트를 직접 문서로 출력하여 사용하는 사람들을 위하여 제작하였습니다.
+        랜덤 숫자 생성기는 UK 테스트를 직접 문서로 출력할 때 사용하실 수 있습니다.
       </p>
     </div>
     <hr>
