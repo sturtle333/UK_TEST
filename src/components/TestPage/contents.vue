@@ -6,13 +6,16 @@
         <div class="timer-counter"><span>{{ timeLeft }}</span></div>
         <div><div class="line-counter">남은 수열 : {{ 10 - index }}</div></div>
         <div class="timer-btn">
-          <div :class="{chosen: isStart}"><button @click="isStart = true;" style="color: #B7F0B1;">시작</button></div>
-          <div :class="{chosen: !isStart}"><button @click="isStart = false;" style="color: #FFA7A7;">종료</button></div>
+          <div :class="{chosen: isStart}"><button @click="onStart" style="color: #B7F0B1;">시작</button></div>
+          <div :class="{chosen: !isStart}"><button @click="onStop" style="color: #FFA7A7;">종료</button></div>
         </div>
       </nav>
     </div>
     <div id="contents-content">
     <div v-for="line in lines">
+      <div class="progress" v-if="line.index == index">
+         <div class="progress-bar" role="progressbar" :aria-valuenow="line.nowIndex" aria-valuemin="0" aria-valuemax="100" :style="{width: line.nowIndex + '%'}"><span class="sr-only">{{ line.nowIndex }}% Complete</span></div>
+      </div>
       <div class="test-line" v-if="line.index == index">
         <div class="test-line-done">
           <p>{{ line.doneStr }}</p>
@@ -21,11 +24,11 @@
           <p>{{ line.leftStr }}</p>
         </div>
       </div>
-      <div class="input-group test-input" v-if="line.index == index">
+      <div class="input-numbers" v-if="line.index == index"><p>{{ line.values[line.nowIndex - 5] }}</p><p>{{ line.values[line.nowIndex - 4] }}</p><p>{{ line.values[line.nowIndex - 3] }}</p><p>{{ line.values[line.nowIndex - 2] }}</p><p>{{ line.values[line.nowIndex - 1] }}</p></div>
+      <div class="input-group test-input" v-if="line.index == index && isStart === true">
         <input id="input-box" v-model.trim="msg" @keyup="line.insert()" type="number" autocomplete="off" pattern="\d{1}[0-9]" class="input-box" placeholder="여기에 숫자 입력" aria-label="여기에 숫자 입력" autofocus></input>
         <button class="btn btn-outline-secondary" type="button" @click="line.undo()">되돌리기</button>
       </div>
-      {{ line.values }}
     </div>
     </div>
   </div>
@@ -44,7 +47,45 @@ export default {
       lines: [],
       isInit: false,
       index: 0,
-      msg: null
+      msg: null,
+      timer: null
+    }
+  },
+  methods: {
+    onStart: function(){
+      this.isStart = true;
+      this.timeIsTicking();
+    },
+    onStop: function(){
+      this.isStart = false;
+      this.min = 0;
+      this.sec = 0;
+      clearInterval(this.timer);
+    },
+    timeIsTicking: function(){
+      this.min = 1;
+      this.sec = 0;
+      this.timer = setInterval(function(){
+        if(this.sec !== 0) {
+          this.sec = this.sec-1;
+        }
+        else if (this.min !== 0) {
+          this.min = this.min - 1;
+          this.sec = 59;
+        }
+        else {
+          if(this.index < 9) {this.endOfLine();}
+          else {this.onStop();}
+        }
+      }.bind(this),10);
+    },
+    endOfLine: function(){
+      clearInterval(this.timer);
+      this.index = this.index + 1;
+      this.timeIsTicking();
+      setTimeout(function(){
+        document.getElementById("input-box").focus();
+      },10);
     }
   },
   computed: {
@@ -83,10 +124,7 @@ export default {
         this.leftStr = this.leftStr.slice(1, 100);
 
         if(this.nowIndex >= 100){
-          main.index = main.index + 1;
-          setTimeout(function(){
-            document.getElementById("input-box").focus();
-          },5);
+          main.endOfLine();
         }
       },
       undo: function() {
@@ -185,14 +223,21 @@ export default {
     overflow: hidden;
   }
   .test-input {
-    width: 10%;
     display: flex;
-    margin: 0 auto;
+    flex-direction: row;
     margin-top: 5%;
   }
   .input-box{
     padding: 2%;
     border: 1px solid gray;
     border-radius: 5px;
+  }
+  .input-numbers {
+    text-align: center;
+  }
+  .input-numbers p{
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 3rem;
   }
 </style>
