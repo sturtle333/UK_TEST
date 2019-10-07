@@ -7,11 +7,14 @@
       </div>
       <div class="contents-test-description">
         <p>
-          
+          해당 사이트는 여러 테스트 방법을 지원합니다.
+          <ul>
+            <li>연습하기 : 암산 훈련을 하시는 분들에게 추천합니다.</li>
+            <li>모의고사 : 최대한 실제 시험용지와 비슷한 UI에서 모의고사를 치룹니다.</li>
+            <li>타이머   : 용지로 연습 하시는 분들을 위해 타이머 기능만 따로 빼두었습니다.</li>
+            <li>개발중 : 개발중입니다. º v º</li>
+          </ul>
         </p>
-      </div>
-      <div class="test-contents">
-        <contents-content></contents-content>
       </div>
     </div>
     <nav-footer></nav-footer>
@@ -20,17 +23,15 @@
 
 <script>
 import header from '../Framecomponents/header.vue'
-import contents from './contents.vue'
 import footer from '../Framecomponents/footer.vue'
 
 export default {
-  name: 'TestFrame',
+  name: 'SelectTestFrame',
   created () {
     document.title = "UK Test - 테스트하기";
   },
   components: {
     'head-line': header,
-    'contents-content': contents,
     'nav-footer': footer
   }
 }

@@ -74,7 +74,6 @@ export default {
 
       insert: function(){
         var inputmsg = parseInt(main.msg.slice(0,1));
-        if(inputmsg === NaN) {alert(inputmsg);}
         setTimeout(function(){
           main.msg = null;
         },1);
