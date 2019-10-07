@@ -22,9 +22,10 @@
         </div>
       </div>
       <div class="input-group test-input" v-if="line.index == index">
-        <input id="input-box" v-model.trim="msg" @keyup="line.insert()" type="number" autocomplete="off" pattern="\d*" autofocus="true" class="input-box" placeholder="여기에 숫자 입력" aria-label="여기에 숫자 입력">
-        <button class="btn btn-outline-secondary" type="button">되돌리기</button>
+        <input id="input-box" v-model.trim="msg" @keyup="line.insert()" type="number" autocomplete="off" pattern="\d{1}[0-9]" class="input-box" placeholder="여기에 숫자 입력" aria-label="여기에 숫자 입력" autofocus></input>
+        <button class="btn btn-outline-secondary" type="button" @click="line.undo()">되돌리기</button>
       </div>
+      {{ line.values }}
     </div>
     </div>
   </div>
@@ -65,19 +66,23 @@ export default {
       index: i,
       nowIndex: 0,
       numbers: [],
+      values: [],
       leftStr: '',
       doneStr: '',
       answers: [],
       leftNum: 99,
 
-      insert: function(event){
-        const inputChar = this.msg;
+      insert: function(){
+        var inputmsg = parseInt(main.msg.slice(0,1));
+        if(inputmsg === NaN) {alert(inputmsg);}
         setTimeout(function(){
           main.msg = null;
         },1);
+        this.values.push(inputmsg);
         this.doneStr = this.doneStr + this.numbers[this.nowIndex];
         this.nowIndex = this.nowIndex + 1;
         this.leftStr = this.leftStr.slice(1, 100);
+
         if(this.nowIndex >= 100){
           main.index = main.index + 1;
           setTimeout(function(){
