@@ -77,7 +77,7 @@ export default {
           if(this.index < 9) {this.endOfLine();}
           else {this.onStop();}
         }
-      }.bind(this),10);
+      }.bind(this),1000);
     },
     endOfLine: function(){
       clearInterval(this.timer);
